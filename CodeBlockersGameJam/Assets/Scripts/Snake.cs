@@ -8,6 +8,7 @@ public class Snake : MonoBehaviour
     public List<Transform> segmentsList;
     public Transform segmentPrefab;
     public int tail;
+    public Food food;
    
     public GameObject enemy;
 
@@ -15,6 +16,7 @@ public class Snake : MonoBehaviour
     {
         segmentsList = new List<Transform>();
         segmentsList.Add(this.transform);
+        food = FindObjectOfType<Food>();
        
     }
 
@@ -106,7 +108,7 @@ public class Snake : MonoBehaviour
 
     }
 
-    private void ResetGame()
+    public void ResetGame()
     {
         for (int i = 1; i < segmentsList.Count; i++)
         {
@@ -115,6 +117,10 @@ public class Snake : MonoBehaviour
             segmentsList.Clear();
             segmentsList.Add(this.transform);
             this.transform.position = Vector3.zero;
+        enemy.transform.position = new Vector2(4, -4);
+        enemy.GetComponent<Enemy>().hit = false;
+
         
+
     }
 }

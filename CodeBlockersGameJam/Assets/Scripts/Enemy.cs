@@ -23,29 +23,40 @@ public class Enemy : MonoBehaviour
     {
         
             tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
-        
-        if (hit == true) {
-           
 
+        if (hit == true)
+        {
+
+
+
+            gameObject.transform.position = snake.segmentsList[snake.segmentsList.Count - 1].transform.position;
+            destroyCounter -= Time.deltaTime;
+            GetComponent<Pathfinding.Seeker>().enabled = false;
+            GetComponent<Pathfinding.AIDestinationSetter>().enabled = false;
+
+
+
+            if (destroyCounter < 0)
+            {
+                snake.segmentsList.RemoveAt(snake.segmentsList.Count - 1);
+
+
+
+                Destroy(tail, 0.1f);
+                if (snake.segmentsList.Count < 2)
                 {
-                    gameObject.transform.position = snake.segmentsList[snake.segmentsList.Count - 1].transform.position;
-                    destroyCounter -= Time.deltaTime;
-                    GetComponent<Pathfinding.Seeker>().enabled = false;
-                    GetComponent<Pathfinding.AIDestinationSetter>().enabled = false;
+                    snake.ResetGame();
+                    GetComponent<Pathfinding.Seeker>().enabled = true;
+                    GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
+                }
+                else
+                {
+                    destroyCounter = destroy;
+                    tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
+                    transform.position = snake.segmentsList[snake.segmentsList.Count - 2].position;
                 }
             }
-
-                    if (destroyCounter < 0)
-                    {
-                snake.segmentsList.RemoveAt(snake.segmentsList.Count - 1) ;
-
-                  
-                        Destroy(tail,0.2f);
-                        destroyCounter = destroy;
-                        tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
-                        transform.position= snake.segmentsList[snake.segmentsList.Count - 2].position;
-                    }
-                
+        }
             
         
     }

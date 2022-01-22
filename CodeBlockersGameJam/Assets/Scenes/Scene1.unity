@@ -572,7 +572,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  works: 0
+  destroy: 4
+  destroyCounter: 0
+  tail: {fileID: 0}
+  first: 0
 --- !u!61 &648618965
 BoxCollider2D:
   m_ObjectHideFlags: 0
