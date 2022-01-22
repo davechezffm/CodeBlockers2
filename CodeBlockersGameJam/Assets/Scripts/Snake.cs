@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     public int tail;
     public Food food;
+    public bool canMove;
+    private SpriteRenderer sprite;
    
     public GameObject enemy;
 
@@ -17,6 +20,8 @@ public class Snake : MonoBehaviour
         segmentsList = new List<Transform>();
         segmentsList.Add(this.transform);
         food = FindObjectOfType<Food>();
+        canMove = true;
+        sprite = GetComponent<SpriteRenderer>();
        
     }
 
@@ -27,36 +32,39 @@ public class Snake : MonoBehaviour
         {
             enemy.GetComponent<Pathfinding.AIDestinationSetter>().target = segmentsList[segmentsList.Count - 1].transform;
         }
-        else { }
+       
       
         tail = segmentsList.Count;
         ;
-        
-        if (direction.x != 0f) {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                direction = Vector2.up;
-
-            }
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                direction = Vector2.down;
-            }
-        }
-
-
-
-        if (direction.y != 0f)
+        if (canMove)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (direction.x != 0f)
             {
-                direction = Vector2.left;
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    direction = Vector2.up;
 
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    direction = Vector2.down;
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                direction = Vector2.right;
 
+
+
+            if (direction.y != 0f)
+            {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    direction = Vector2.left;
+
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    direction = Vector2.right;
+
+                }
             }
         }
         
@@ -110,17 +118,27 @@ public class Snake : MonoBehaviour
 
     public void ResetGame()
     {
-        for (int i = 1; i < segmentsList.Count; i++)
+       /* for (int i = 1; i < segmentsList.Count; i++)
         {
             Destroy(segmentsList[i].gameObject);
         }
             segmentsList.Clear();
             segmentsList.Add(this.transform);
             this.transform.position = Vector3.zero;
-        enemy.transform.position = new Vector2(4, -4);
+        enemy.transform.position = new Vector2(4, -4);*/
+
         enemy.GetComponent<Enemy>().hit = false;
+        canMove = false;
+        sprite.color = new Color(0, 0, 0, 0);
+        Invoke("LoadScene", 2f);
+        direction = Vector2.zero;
 
         
 
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene(2);
     }
 }

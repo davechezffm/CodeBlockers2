@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        
+        if (snake.canMove == true)
             tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
 
         if (hit == true)
@@ -46,8 +46,8 @@ public class Enemy : MonoBehaviour
                 if (snake.segmentsList.Count < 2)
                 {
                     snake.ResetGame();
-                    GetComponent<Pathfinding.Seeker>().enabled = true;
-                    GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
+                    //GetComponent<Pathfinding.Seeker>().enabled = true;
+                    //GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
                 }
                 else
                 {
@@ -69,6 +69,17 @@ public class Enemy : MonoBehaviour
         {
             hit = true;
             
+        }
+
+        if (hit == true)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                transform.position = new Vector2(4, -4);
+                hit = false;
+                GetComponent<Pathfinding.Seeker>().enabled = true;
+                GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
+            }
         }
     }
 }
