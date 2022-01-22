@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
 
 
-                Destroy(tail, 0.1f);
+                Destroy(tail, 0.2f);
                 if (snake.segmentsList.Count < 2)
                 {
                     snake.ResetGame();
