@@ -409,7 +409,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 12.441271
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -477,7 +477,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -1146,6 +1146,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2360802729080348769, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0cec4eacb9e9b940a98a2f85f7c88cc,
+        type: 3}
+    - target: {fileID: 2360802729080348769, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2360802729080348772, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
         type: 3}
       propertyPath: m_Name
@@ -1155,6 +1166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Booster
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360802729080348799, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
+        type: 3}
+      propertyPath: boostSpeedTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab1bd48f86ddfa4384353a15e3f0bc0, type: 3}

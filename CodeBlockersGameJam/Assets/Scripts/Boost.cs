@@ -12,7 +12,7 @@ public class Boost : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {//Here is the number to change how much faster the player goes.
-            Time.fixedDeltaTime = 0.03f;
+            Time.fixedDeltaTime = 0.05f;
             boost = true;
             boostSpeedTimeCounter = boostSpeedTime;
 
@@ -26,7 +26,7 @@ public class Boost : MonoBehaviour
             if (boostSpeedTimeCounter < 0)
             {
                 boost = false;
-                Time.fixedDeltaTime = 0.05f;
+                Time.fixedDeltaTime = 0.15f;
 
 
             }
