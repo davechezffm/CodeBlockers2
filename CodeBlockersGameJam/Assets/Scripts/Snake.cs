@@ -5,10 +5,10 @@ using UnityEngine;
 public class Snake : MonoBehaviour
 {
     private Vector2 direction = Vector2.right;
-    private List<Transform> segmentsList;
+    public List<Transform> segmentsList;
     public Transform segmentPrefab;
     public int tail;
-    public Transform tail2;
+   
     public GameObject enemy;
 
     private void Start()
@@ -21,9 +21,14 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
-        enemy.GetComponent<Pathfinding.AIDestinationSetter>().target = tail2;
+        if (enemy.GetComponent<Pathfinding.AIDestinationSetter>().enabled == true)
+        {
+            enemy.GetComponent<Pathfinding.AIDestinationSetter>().target = segmentsList[segmentsList.Count - 1].transform;
+        }
+        else { }
+      
         tail = segmentsList.Count;
-        tail2 = segmentsList[tail - 1];
+        ;
         
         if (direction.x != 0f) {
             if (Input.GetKeyDown(KeyCode.W))
@@ -73,7 +78,7 @@ public class Snake : MonoBehaviour
                 segmentsList[i].tag = "Obstacle";
 
             }
-            tail2.tag = "Tail";
+            segmentsList[segmentsList.Count - 1].tag = "Tail";
                 
         }
 
