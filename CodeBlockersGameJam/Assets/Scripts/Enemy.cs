@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public GameObject pepper;
     public bool pepperIsPresent;
     SpriteRenderer sprite;
+   
 
 
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
         first = true;
         path = GetComponent<AIPath>();
         sprite = GetComponent<SpriteRenderer>();
+        
 
 
 
@@ -124,7 +126,7 @@ water.transform.position, moveSpeed * Time.deltaTime);
                 GetComponent<Pathfinding.Seeker>().enabled = true;
                 GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
                 pepperIsPresent = false;
-                sprite.color = new Color(255, 255, 255, 255);
+                sprite.color = new Color(212, 98, 1, 255);
 
             }
         }
@@ -145,6 +147,7 @@ water.transform.position, moveSpeed * Time.deltaTime);
     {
         sprite.color = new Color(255, 0, 0, 255);
         hit = false;
+        
        
         recover = true;
     }
