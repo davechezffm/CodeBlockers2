@@ -135,11 +135,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  destroy: 4
+  destroy: 2
   destroyCounter: 0
   tail: {fileID: 0}
   first: 0
   target: {fileID: 0}
+  sfxManager: {fileID: 0}
+  water: {fileID: 0}
+  moveSpeed: 5
+  recover: 0
+  pepper: {fileID: 3882101373939752204, guid: 32529d7f58f874742928f7c89126ac05, type: 3}
+  pepperIsPresent: 0
 --- !u!61 &973653507395990198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,10 +156,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.033524632, y: 0.014444947}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,7 +170,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3927176, y: 1.4695001}
   m_EdgeRadius: 0
 --- !u!212 &973653507395990197
 SpriteRenderer:
@@ -237,7 +243,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &973653507395990203
 Animator:
   serializedVersion: 3

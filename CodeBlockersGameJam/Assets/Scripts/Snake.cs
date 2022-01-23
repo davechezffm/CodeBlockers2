@@ -155,7 +155,7 @@ public class Snake : MonoBehaviour
             if (collision.CompareTag("Pepper"))
             {
                 enemy.GetComponent<Enemy>().MoveToWater();
-                Destroy(collision.gameObject, 0.5f);
+                Destroy(collision.gameObject, 0.2f);
                
                 
             }

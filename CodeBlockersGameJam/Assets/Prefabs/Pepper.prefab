@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3882101373939752210}
   - component: {fileID: 3882101373939752211}
   - component: {fileID: -5685929635275829401}
+  - component: {fileID: 4467850007081673437}
   m_Layer: 0
   m_Name: Pepper
   m_TagString: Pepper
@@ -123,3 +124,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridArea: {fileID: 0}
+--- !u!50 &4467850007081673437
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882101373939752204}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
