@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Tail
   - Booster
+  - Pepper
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
+  - test
   - 
   - 
   - 
@@ -44,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: test
+    uniqueID: 3032739805
     locked: 0

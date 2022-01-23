@@ -9,6 +9,7 @@ public class Boost : MonoBehaviour
     public int boostSpeedTime = 3;
     private float boostSpeedTimeCounter;
     private bool boost;
+    public SFXManager sfxManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -17,7 +18,13 @@ public class Boost : MonoBehaviour
             boost = true;
             boostSpeedTimeCounter = boostSpeedTime;
             RandomizePosition();
+            sfxManager.booster.Play();
 
+        }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            RandomizePosition();
         }
     }
 

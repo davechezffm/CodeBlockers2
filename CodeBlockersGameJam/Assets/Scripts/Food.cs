@@ -25,6 +25,11 @@ public class Food : MonoBehaviour
         {
             RandomizePosition();
         }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            RandomizePosition();
+        }
     }
 
 }

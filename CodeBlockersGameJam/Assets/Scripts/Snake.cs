@@ -13,6 +13,7 @@ public class Snake : MonoBehaviour
     public bool canMove;
     private SpriteRenderer sprite;
     private Animator anim;
+    public SFXManager sfxManager;
 
     public GameObject enemy;
 
@@ -24,12 +25,37 @@ public class Snake : MonoBehaviour
         canMove = true;
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        Grow();
 
     }
 
 
     private void Update()
     {
+        for (int i = 1; i < segmentsList.Count; i++)
+        {
+            if (segmentsList[i].position.x > segmentsList[i - 1].position.x)
+            {
+                segmentsList[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Up", false);
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Down", false);
+            }
+            if (segmentsList[i].position.x < segmentsList[i - 1].position.x)
+            {
+                segmentsList[i].gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Up", false);
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Down", false);
+            }
+
+            if (segmentsList[i].position.y <  segmentsList[i - 1].position.y)
+            {
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Up", true);
+            }
+            if (segmentsList[i].position.y > segmentsList[i - 1].position.y)
+            {
+                segmentsList[i].gameObject.GetComponent<Animator>().SetBool("Down", true);
+            }
+        }
         if (enemy.GetComponent<Pathfinding.AIDestinationSetter>().enabled == true)
         {
             enemy.GetComponent<Pathfinding.AIDestinationSetter>().target = segmentsList[segmentsList.Count - 1].transform;
@@ -97,7 +123,9 @@ public class Snake : MonoBehaviour
                 
         }
 
-            }
+       
+
+    }
 
     private void Grow()
     {
@@ -105,6 +133,7 @@ public class Snake : MonoBehaviour
         segment.position = segmentsList[segmentsList.Count - 1].position;
 
             segmentsList.Add(segment);
+        Score.score++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -112,11 +141,24 @@ public class Snake : MonoBehaviour
         if (collision.CompareTag("Food"))
         {
             Grow();
+            sfxManager.grow.Play();
         }
 
         if (collision.CompareTag ("Obstacle"))
         {
             ResetGame();
+            sfxManager.gameOver.Play();
+        }
+
+        if (enemy.GetComponent<Enemy>().hit == true)
+        {
+            if (collision.CompareTag("Pepper"))
+            {
+                enemy.GetComponent<Enemy>().MoveToWater();
+                Destroy(collision.gameObject, 0.5f);
+               
+                
+            }
         }
 
     }

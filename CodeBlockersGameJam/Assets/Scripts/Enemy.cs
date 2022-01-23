@@ -14,18 +14,27 @@ public class Enemy : MonoBehaviour
     public bool first;
     AIPath path;
     public Transform target;
-    
-    
-   
-   
+    public SFXManager sfxManager;
+    public Transform water;
+    public float moveSpeed;
+    public bool recover;
+    public GameObject pepper;
+    public bool pepperIsPresent;
+    SpriteRenderer sprite;
+
+
+
+
     private void Start()
     {
         snake = FindObjectOfType<Snake>();
         destroyCounter = destroy;
         first = true;
         path = GetComponent<AIPath>();
-        
-       
+        sprite = GetComponent<SpriteRenderer>();
+
+
+
     }
 
     
@@ -34,6 +43,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (recover)
+        {
+            transform.position = Vector3.MoveTowards(transform.position,
+water.transform.position, moveSpeed * Time.deltaTime);
+        }
         if (path.destination.x <= -0.1)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -60,6 +74,8 @@ public class Enemy : MonoBehaviour
             if (destroyCounter < 0)
             {
                 snake.segmentsList.RemoveAt(snake.segmentsList.Count - 1);
+                sfxManager.cickenLost.Play();
+                Score.score--;
 
 
 
@@ -86,13 +102,34 @@ public class Enemy : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tail"))
-        {
-            hit = true;
+        if (recover == false) {
+            if (collision.CompareTag("Tail"))
+            {
+                hit = true;
+                sfxManager.enemyAttaches.Play();
+                if (pepperIsPresent == false)
+                {
+                    Instantiate(pepper);
+                    pepperIsPresent = true;
+                }
+            }
             
         }
 
-        if (hit == true)
+        if (recover)
+        {
+            if (collision.CompareTag("Water"))
+            {
+                recover = false;
+                GetComponent<Pathfinding.Seeker>().enabled = true;
+                GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
+                pepperIsPresent = false;
+                sprite.color = new Color(255, 255, 255, 255);
+
+            }
+        }
+
+        /*if (hit == true)
         {
             if (collision.CompareTag("Player"))
             {
@@ -101,6 +138,14 @@ public class Enemy : MonoBehaviour
                 GetComponent<Pathfinding.Seeker>().enabled = true;
                 GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
             }
-        }
+        }*/
+    }
+
+    public void MoveToWater()
+    {
+        sprite.color = new Color(255, 0, 0, 255);
+        hit = false;
+       
+        recover = true;
     }
 }
