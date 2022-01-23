@@ -12,7 +12,8 @@ public class Snake : MonoBehaviour
     public Food food;
     public bool canMove;
     private SpriteRenderer sprite;
-   
+    private Animator anim;
+
     public GameObject enemy;
 
     private void Start()
@@ -22,7 +23,8 @@ public class Snake : MonoBehaviour
         food = FindObjectOfType<Food>();
         canMove = true;
         sprite = GetComponent<SpriteRenderer>();
-       
+        anim = GetComponent<Animator>();
+
     }
 
 
@@ -58,11 +60,14 @@ public class Snake : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A))
                 {
                     direction = Vector2.left;
+                    anim.Play("Player_Left");
+                    anim.SetBool("Right", false);
 
                 }
                 else if (Input.GetKeyDown(KeyCode.D))
                 {
                     direction = Vector2.right;
+                    anim.SetBool("Right", true);
 
                 }
             }

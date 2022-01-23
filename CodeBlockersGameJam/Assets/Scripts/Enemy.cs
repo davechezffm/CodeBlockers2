@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,25 +12,45 @@ public class Enemy : MonoBehaviour
     public float destroyCounter;
     public GameObject tail;
     public bool first;
+    AIPath path;
+    public Transform target;
+    
+    
+   
    
     private void Start()
     {
         snake = FindObjectOfType<Snake>();
         destroyCounter = destroy;
         first = true;
+        path = GetComponent<AIPath>();
+        
+       
     }
+
+    
+    
+    
 
     private void Update()
     {
+        if (path.destination.x <= -0.1)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (path.destination.x >= -0.1)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        target = snake.segmentsList[snake.segmentsList.Count - 1].transform;
         if (snake.canMove == true)
             tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
 
         if (hit == true)
         {
+            
 
-
-
-            gameObject.transform.position = snake.segmentsList[snake.segmentsList.Count - 1].transform.position;
+                gameObject.transform.position = snake.segmentsList[snake.segmentsList.Count - 1].transform.position;
             destroyCounter -= Time.deltaTime;
             GetComponent<Pathfinding.Seeker>().enabled = false;
             GetComponent<Pathfinding.AIDestinationSetter>().enabled = false;
