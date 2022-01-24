@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33, y: 59}
+  m_AnchoredPosition: {x: -25, y: 7}
   m_SizeDelta: {x: 230.56976, y: 39.62558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18884566
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collect these to gain points, they hatch when collected
+  m_Text: Collect eggs to gain points, they hatch when collected
 --- !u!222 &18884567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -369,12 +369,12 @@ PrefabInstance:
     - target: {fileID: 3882101373939752209, guid: 32529d7f58f874742928f7c89126ac05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46
+      value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 3882101373939752209, guid: 32529d7f58f874742928f7c89126ac05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 126
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 3882101373939752209, guid: 32529d7f58f874742928f7c89126ac05,
         type: 3}
@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 6408350579770860735, guid: a530f583387a2354fa8f1106267a1027,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 6408350579770860735, guid: a530f583387a2354fa8f1106267a1027,
         type: 3}
@@ -554,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 4381247011287808135, guid: e96cf82af2ca3b846a306947b56044f8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4381247011287808135, guid: e96cf82af2ca3b846a306947b56044f8,
         type: 3}
@@ -685,12 +685,12 @@ PrefabInstance:
     - target: {fileID: 2730990602534427386, guid: c11c65e64bad36949b42251340a59b61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.33847
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2730990602534427386, guid: c11c65e64bad36949b42251340a59b61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 226
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 2730990602534427386, guid: c11c65e64bad36949b42251340a59b61,
         type: 3}
@@ -774,12 +774,12 @@ PrefabInstance:
     - target: {fileID: 973653507395990192, guid: 45ba805ded9ad814db551c61eda35b29,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 366
+      value: 323
       objectReference: {fileID: 0}
     - target: {fileID: 973653507395990192, guid: 45ba805ded9ad814db551c61eda35b29,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 98
+      value: 151
       objectReference: {fileID: 0}
     - target: {fileID: 973653507395990192, guid: 45ba805ded9ad814db551c61eda35b29,
         type: 3}
@@ -883,7 +883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -88}
+  m_AnchoredPosition: {x: -30, y: -88}
   m_SizeDelta: {x: 217.73886, y: 36.41707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685820634
@@ -918,7 +918,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Avoid obstacles or it is game over
+  m_Text: Avoid obstacles
 --- !u!222 &685820635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1136,6 +1136,7 @@ RectTransform:
   - {fileID: 1387279109}
   - {fileID: 1601581077}
   - {fileID: 18884565}
+  - {fileID: 1683684860}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1221,12 +1222,12 @@ PrefabInstance:
     - target: {fileID: 1986916319757850741, guid: 8468e153da4667943b299d3c21260def,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 367
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 1986916319757850741, guid: 8468e153da4667943b299d3c21260def,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 156
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 1986916319757850741, guid: 8468e153da4667943b299d3c21260def,
         type: 3}
@@ -1384,8 +1385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 272, y: -69}
-  m_SizeDelta: {x: 196.00397, y: 35.347557}
+  m_AnchoredPosition: {x: 252.70999, y: -16.9}
+  m_SizeDelta: {x: 233.42542, y: 69.08052}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338245362
 MonoBehaviour:
@@ -1419,7 +1420,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cat will chase and eat your chickens, reducing your score
+  m_Text: Cat chases chicken followers and eats them if it catches them, reducing
+    score
 --- !u!222 &1338245363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1462,7 +1464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 279, y: -4}
+  m_AnchoredPosition: {x: -44, y: -45}
   m_SizeDelta: {x: 191.00793, y: 32.139023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387279110
@@ -1497,7 +1499,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chickens hatch from eggs
+  m_Text: Chickens follow you around
 --- !u!222 &1387279111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1540,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -36}
+  m_AnchoredPosition: {x: 252, y: -81}
   m_SizeDelta: {x: 234.84674, y: 39.625587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428273694
@@ -1575,7 +1577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Get this if the cat catches your chickens
+  m_Text: Get the chilli if the cat catches your chickens
 --- !u!222 &1428273695
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1661,7 +1663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428592939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 297, y: 167, z: -460}
+  m_LocalPosition: {x: 292, y: 167, z: -460}
   m_LocalScale: {x: 31.45546, y: 31.45546, z: 31.45546}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1697,17 +1699,17 @@ PrefabInstance:
     - target: {fileID: 2360802729080348768, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.987915
+      value: 331
       objectReference: {fileID: 0}
     - target: {fileID: 2360802729080348768, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 173
+      value: 217
       objectReference: {fileID: 0}
     - target: {fileID: 2360802729080348768, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2360802729080348768, guid: dab1bd48f86ddfa4384353a15e3f0bc0,
         type: 3}
@@ -1845,7 +1847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577855350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86, y: 81, z: -192.05316}
+  m_LocalPosition: {x: 63, y: 81, z: -192.05316}
   m_LocalScale: {x: 24.218163, y: 24.218163, z: 24.218163}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1885,7 +1887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: 9}
+  m_AnchoredPosition: {x: 248, y: 56}
   m_SizeDelta: {x: 226.29279, y: 39.625595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601581078
@@ -1920,7 +1922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Boosts speed temporarily, can be a help or a hindrance
+  m_Text: Boosts speed temporarily
 --- !u!222 &1601581079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1963,7 +1965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 57}
+  m_AnchoredPosition: {x: -42, y: 57}
   m_SizeDelta: {x: 195.28491, y: 36.417053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638202263
@@ -2006,6 +2008,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638202261}
+  m_CullTransparentMesh: 0
+--- !u!1 &1683684859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683684860}
+  - component: {fileID: 1683684862}
+  - component: {fileID: 1683684861}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1683684860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683684859}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 897955817}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 79, y: 85}
+  m_SizeDelta: {x: 191.00793, y: 32.139023}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1683684861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683684859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Control with WASD
+--- !u!222 &1683684862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683684859}
   m_CullTransparentMesh: 0
 --- !u!1 &1983611643
 GameObject:
@@ -2064,7 +2144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Chicken Jam
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2086,7 +2166,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 2194
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2097,7 +2177,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 5
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2127,7 +2207,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -98.455154, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
