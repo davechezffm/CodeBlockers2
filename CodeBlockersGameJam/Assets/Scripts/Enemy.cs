@@ -33,14 +33,9 @@ public class Enemy : MonoBehaviour
         first = true;
         path = GetComponent<AIPath>();
         sprite = GetComponent<SpriteRenderer>();
-        
-
-
 
     }
 
-    
-    
     
 
     private void Update()
@@ -126,7 +121,7 @@ water.transform.position, moveSpeed * Time.deltaTime);
                 GetComponent<Pathfinding.Seeker>().enabled = true;
                 GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
                 pepperIsPresent = false;
-                sprite.color = new Color(212, 98, 1, 255);
+                sprite.color = new Color(255, 255, 255, 255);
 
             }
         }
