@@ -156,6 +156,7 @@ public class Snake : MonoBehaviour
             {
                 enemy.GetComponent<Enemy>().MoveToWater();
                 Destroy(collision.gameObject, 0.2f);
+                
                
                 
             }

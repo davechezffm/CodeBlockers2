@@ -44,15 +44,20 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position,
 water.transform.position, moveSpeed * Time.deltaTime);
-        }
-        if (path.destination.x <= -0.1)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (path.destination.x >= -0.1)
-        {
             transform.localScale = new Vector3(1, 1, 1);
+
         }
+        if (hit == false) { 
+        if (GetComponent<Pathfinding.AIDestinationSetter>().target.transform.position.x
+            < transform.position.x)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            if (GetComponent<Pathfinding.AIDestinationSetter>().target.transform.position.x
+                > transform.position.x)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            } }
         target = snake.segmentsList[snake.segmentsList.Count - 1].transform;
         if (snake.canMove == true)
             tail = snake.segmentsList[snake.segmentsList.Count - 1].transform.gameObject;
@@ -74,14 +79,11 @@ water.transform.position, moveSpeed * Time.deltaTime);
                 sfxManager.cickenLost.Play();
                 Score.score--;
 
-
-
                 Destroy(tail, 0.2f);
                 if (snake.segmentsList.Count < 2)
                 {
                     snake.ResetGame();
-                    //GetComponent<Pathfinding.Seeker>().enabled = true;
-                    //GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
+                  
                 }
                 else
                 {
