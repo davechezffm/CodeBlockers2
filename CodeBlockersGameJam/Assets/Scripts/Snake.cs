@@ -117,10 +117,15 @@ public class Snake : MonoBehaviour
             if (segmentsList[i].position != segmentsList[i - 1].position)
             {
                 segmentsList[i].tag = "Obstacle";
+                segmentsList[i].GetComponent<SpriteRenderer>().color =
+               new Color(255, 255, 255, 255);
 
             }
             segmentsList[segmentsList.Count - 1].tag = "Tail";
-                
+            segmentsList[segmentsList.Count - 1].GetComponent<SpriteRenderer>().color =
+                new Color(255, 255, 0, 255);
+
+
         }
 
        
