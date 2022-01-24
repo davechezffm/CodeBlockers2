@@ -124,20 +124,12 @@ water.transform.position, moveSpeed * Time.deltaTime);
                 GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
                 pepperIsPresent = false;
                 sprite.color = new Color(255, 255, 255, 255);
+                sfxManager.water.Play();
 
             }
         }
 
-        /*if (hit == true)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                transform.position = new Vector2(4, -4);
-                hit = false;
-                GetComponent<Pathfinding.Seeker>().enabled = true;
-                GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
-            }
-        }*/
+    
     }
 
     public void MoveToWater()

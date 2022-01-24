@@ -9,5 +9,7 @@ public class SFXManager : MonoBehaviour
     public AudioSource booster;
     public AudioSource gameOver;
     public AudioSource enemyAttaches;
+    public AudioSource chilli;
+    public AudioSource water;
 
 }
